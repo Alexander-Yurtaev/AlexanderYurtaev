@@ -67,6 +67,7 @@
     <Compile Include="Behaviors\CloseWindowBehavior.cs" />
     <Compile Include="EventHandlers\BaseModelView.PreviewEnterKeyDown.cs" />
     <Compile Include="EventHandlers\BaseModelView.EnterKeyDown.cs" />
+    <Compile Include="Extensions\TaskExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
