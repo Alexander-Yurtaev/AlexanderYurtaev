@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI packages", "UI packages", "{17F41687-1989-4D79-9129-45705EA3B4CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexanderYurtaev.Framework", "AlexanderYurtaev.Framework\AlexanderYurtaev.Framework.csproj", "{72A8F937-90D2-4709-9C15-653CAFCA03F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Colorlib", "Colorlib", "{38470D6A-32DB-4121-9A2B-0EADE1C9875A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{D0A50BBE-7D7F-40C7-B431-3CF1CB2DA799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colorlib", "UI packages\Colorlib\Src\Colorlib\Colorlib.csproj", "{1B86F6A4-F509-4C82-AAC2-98987000868C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexanderYurtaev.Common", "AlexanderYurtaev.Common\AlexanderYurtaev.Common.csproj", "{8F203EE9-4F6B-4F70-8C3E-54D665C2CFC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexanderYurtaev.Demo", "AlexanderYurtaev.Demo\AlexanderYurtaev.Demo.csproj", "{A6E38A3F-83FE-4AFD-B9EB-81BFB4886752}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72A8F937-90D2-4709-9C15-653CAFCA03F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A8F937-90D2-4709-9C15-653CAFCA03F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A8F937-90D2-4709-9C15-653CAFCA03F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A8F937-90D2-4709-9C15-653CAFCA03F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B86F6A4-F509-4C82-AAC2-98987000868C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B86F6A4-F509-4C82-AAC2-98987000868C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B86F6A4-F509-4C82-AAC2-98987000868C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B86F6A4-F509-4C82-AAC2-98987000868C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F203EE9-4F6B-4F70-8C3E-54D665C2CFC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F203EE9-4F6B-4F70-8C3E-54D665C2CFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F203EE9-4F6B-4F70-8C3E-54D665C2CFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F203EE9-4F6B-4F70-8C3E-54D665C2CFC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E38A3F-83FE-4AFD-B9EB-81BFB4886752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E38A3F-83FE-4AFD-B9EB-81BFB4886752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E38A3F-83FE-4AFD-B9EB-81BFB4886752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E38A3F-83FE-4AFD-B9EB-81BFB4886752}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38470D6A-32DB-4121-9A2B-0EADE1C9875A} = {17F41687-1989-4D79-9129-45705EA3B4CA}
+		{D0A50BBE-7D7F-40C7-B431-3CF1CB2DA799} = {38470D6A-32DB-4121-9A2B-0EADE1C9875A}
+		{1B86F6A4-F509-4C82-AAC2-98987000868C} = {D0A50BBE-7D7F-40C7-B431-3CF1CB2DA799}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAA4D297-49DF-4EA7-88DD-83E5BFEFB38B}
+	EndGlobalSection
+EndGlobal
