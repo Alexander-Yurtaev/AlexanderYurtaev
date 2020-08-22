@@ -66,8 +66,9 @@
     <Compile Include="BaseModelView.cs" />
     <Compile Include="Behaviors\BaseBehavior.cs" />
     <Compile Include="Behaviors\CloseWindowBehavior.cs" />
-    <Compile Include="EventHandlers\BaseModelView.PreviewEnterKeyDown.cs" />
-    <Compile Include="EventHandlers\BaseModelView.EnterKeyDown.cs" />
+    <Compile Include="EventHandlers\AttachedProperties.Loaded.cs" />
+    <Compile Include="EventHandlers\AttachedProperties.PreviewEnterKeyDown.cs" />
+    <Compile Include="EventHandlers\AttachedProperties.EnterKeyDown.cs" />
     <Compile Include="Extensions\EnumBindingSourceExtension.cs" />
     <Compile Include="Extensions\TaskExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

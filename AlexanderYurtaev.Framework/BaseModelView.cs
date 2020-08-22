@@ -3,7 +3,7 @@ using Prism.Mvvm;
 
 namespace AlexanderYurtaev.Framework
 {
-    public partial class BaseModelView : BindableBase
+    public class BaseModelView : BindableBase
     {
         #region INotifyPropertyChanged
 

@@ -1,12 +1,12 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace AlexanderYurtaev.Framework
+namespace AlexanderYurtaev.Framework.EventHandlers
 {
-    public partial class BaseModelView
+    public partial class AttachedProperties
     {
         public static readonly DependencyProperty OnPreviewEnterKeyDownProperty = DependencyProperty.RegisterAttached(
-            "OnPreviewEnterKeyDown", typeof(ICommand), typeof(BaseModelView),
+            "OnPreviewEnterKeyDown", typeof(ICommand), typeof(AttachedProperties),
             new PropertyMetadata(default(ICommand), OnOnPreviewEnterKeyDown));
 
         private static void OnOnPreviewEnterKeyDown(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -22,6 +22,16 @@ namespace AlexanderYurtaev.Framework
             }
         }
 
+        public static void SetOnPreviewEnterKeyDown(DependencyObject element, ICommand value)
+        {
+            element.SetValue(OnPreviewEnterKeyDownProperty, value);
+        }
+
+        public static ICommand GetOnPreviewEnterKeyDown(DependencyObject element)
+        {
+            return (ICommand)element.GetValue(OnPreviewEnterKeyDownProperty);
+        }
+
         private static void ElementOnPreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key != Key.Enter && e.Key != Key.Return) return;
@@ -32,16 +42,6 @@ namespace AlexanderYurtaev.Framework
             {
                 command.Execute(element);
             }
-        }
-
-        public static void SetOnPreviewEnterKeyDown(DependencyObject element, ICommand value)
-        {
-            element.SetValue(OnPreviewEnterKeyDownProperty, value);
-        }
-
-        public static ICommand GetOnPreviewEnterKeyDown(DependencyObject element)
-        {
-            return (ICommand) element.GetValue(OnPreviewEnterKeyDownProperty);
         }
     }
 }
