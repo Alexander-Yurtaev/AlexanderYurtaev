@@ -84,6 +84,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\FileServiceConstants.cs" />
+    <Compile Include="Services\IFileService.cs" />
+    <Compile Include="Services\ISaveFileService.cs" />
+    <Compile Include="Services\IOpenFileService.cs" />
+    <Compile Include="Services\SaveFileService.cs" />
+    <Compile Include="Services\OpenFileService.cs" />
+    <Compile Include="Services\SaveImageFileService.cs" />
+    <Compile Include="Services\OpenImageFileService.cs" />
+    <Compile Include="Services\ShowDialogService.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
