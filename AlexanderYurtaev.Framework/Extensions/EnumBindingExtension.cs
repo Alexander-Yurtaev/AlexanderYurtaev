@@ -3,11 +3,11 @@ using System.Windows.Markup;
 
 namespace AlexanderYurtaev.Framework.Extensions
 {
-    public class EnumBindingSourceExtension : MarkupExtension
+    public class EnumBindingExtension : MarkupExtension
     {
         public Type EnumType { get; private set; }
 
-        public EnumBindingSourceExtension(Type enumType)
+        public EnumBindingExtension(Type enumType)
         {
             if (enumType == null || enumType.IsEnum)
                 throw new ArgumentException($"{nameof(EnumType)} must not be null and of type {nameof(Enum)}");

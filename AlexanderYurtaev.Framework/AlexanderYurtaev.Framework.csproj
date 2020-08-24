@@ -63,13 +63,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttachedProperties\SystemContextMenu.cs" />
+    <Compile Include="Attributes\LocalizedDescriptionAttribute.cs" />
     <Compile Include="BaseModelView.cs" />
     <Compile Include="Behaviors\BaseBehavior.cs" />
     <Compile Include="Behaviors\CloseWindowBehavior.cs" />
+    <Compile Include="EnumDescriptionTypeConverter.cs" />
     <Compile Include="EventHandlers\AttachedProperties.Loaded.cs" />
     <Compile Include="EventHandlers\AttachedProperties.PreviewEnterKeyDown.cs" />
     <Compile Include="EventHandlers\AttachedProperties.EnterKeyDown.cs" />
-    <Compile Include="Extensions\EnumBindingSourceExtension.cs" />
+    <Compile Include="Extensions\EnumBindingExtension.cs" />
     <Compile Include="Extensions\TaskExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -105,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
+    <Folder Include="TypeConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
