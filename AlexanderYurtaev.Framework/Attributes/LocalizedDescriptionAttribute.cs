@@ -1,17 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Resources;
+using AlexanderYurtaev.Framework.LocalizedDescriptionDepositories;
 
 namespace AlexanderYurtaev.Framework.Attributes
 {
     public class LocalizedDescriptionAttribute : DescriptionAttribute
     {
-        private readonly ResourceManager _resourceManager;
+        private readonly ILocalizedDescriptionDepository _repository;
         private readonly string _resourceKey;
 
-        public LocalizedDescriptionAttribute(string resourceKey, Type resourceType)
+        public LocalizedDescriptionAttribute(ILocalizedDescriptionDepository repository, string resourceKey, Type resourceType)
         {
-            _resourceManager=new ResourceManager(resourceType);
+            _repository = repository;
             _resourceKey = resourceKey;
         }
 
@@ -21,7 +21,7 @@ namespace AlexanderYurtaev.Framework.Attributes
         {
             get
             {
-                string description = _resourceManager.GetString(_resourceKey);
+                string description = _repository.GetString(_resourceKey);
                 return string.IsNullOrEmpty(description)
                     ? $"[[{_resourceKey}]]"
                     : description;

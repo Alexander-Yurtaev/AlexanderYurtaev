@@ -16,15 +16,12 @@ namespace AlexanderYurtaev.Framework
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType != typeof(string)) return base.ConvertTo(context, culture, value, destinationType);
-            
-            if (value == null) return base.ConvertTo(context, culture, value, destinationType);
+            if (destinationType != typeof(string) || value == null) return base.ConvertTo(context, culture, value, destinationType);
             
             FieldInfo fi = value.GetType().GetField(value.ToString());
             if (fi == null) return base.ConvertTo(context, culture, value, destinationType);
             
-            var attributes =
-                (DescriptionAttribute[]) fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            var attributes = (DescriptionAttribute[]) fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
             var attribute = attributes.FirstOrDefault();
             return (!string.IsNullOrEmpty(attribute?.Description)) ? attribute.Description : value.ToString();
         }
