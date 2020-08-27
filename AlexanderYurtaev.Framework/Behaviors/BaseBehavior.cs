@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using Microsoft.Xaml.Behaviors;
+using System.Windows;
 
 namespace AlexanderYurtaev.Framework.Behaviors
 {
@@ -46,9 +50,10 @@ namespace AlexanderYurtaev.Framework.Behaviors
             TagElement.Unloaded -= AssociatedObjectOnUnloaded;
         }
 
-        #endregion Handlers
+        #endregion Hendlers
 
         protected abstract void Subscribe();
+
         protected abstract void UnSubscribe();
     }
 }

@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System.Windows;
 using System.Windows.Input;
 
 namespace AlexanderYurtaev.Framework.EventHandlers
@@ -34,7 +38,11 @@ namespace AlexanderYurtaev.Framework.EventHandlers
 
         private static void ElementOnPreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key != Key.Enter && e.Key != Key.Return) return;
+            // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+            // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+            if ((int)e.Key != (int)Key.Enter) return;
             if (!(sender is UIElement element)) return;
 
             ICommand command = GetOnEnterKeyDown(element);

@@ -1,12 +1,16 @@
-﻿using System.Linq;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using Microsoft.Win32;
+using System.Linq;
 
 namespace AlexanderYurtaev.Framework.Services
 {
     public class OpenFileService : ShowDialogService, IOpenFileService
     {
         public bool Multiselect { get; set; }
-        
+
         #region Overrides of ShowDialogService<string>
 
         protected override string ShowDialog(params string[] parameters)
@@ -21,6 +25,6 @@ namespace AlexanderYurtaev.Framework.Services
             return dlg.ShowDialog() == true ? dlg.FileName : string.Empty;
         }
 
-        #endregion
+        #endregion Overrides of ShowDialogService<string>
     }
 }

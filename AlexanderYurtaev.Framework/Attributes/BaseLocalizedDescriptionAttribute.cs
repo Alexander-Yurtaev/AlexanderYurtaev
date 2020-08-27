@@ -1,5 +1,9 @@
-﻿using System.ComponentModel;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using AlexanderYurtaev.Framework.LocalizedDescriptionProviders;
+using System.ComponentModel;
 
 namespace AlexanderYurtaev.Framework.Attributes
 {
@@ -27,6 +31,6 @@ namespace AlexanderYurtaev.Framework.Attributes
             }
         }
 
-        #endregion
+        #endregion Overrides of DescriptionAttribute
     }
 }

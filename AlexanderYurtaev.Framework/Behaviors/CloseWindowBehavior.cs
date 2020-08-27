@@ -1,4 +1,8 @@
-﻿using System;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
@@ -20,7 +24,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
         protected override void Subscribe()
         {
             if (!(TagElement.DataContext is ICloseWindow viewModel)) return;
-            viewModel.OnClose  += CloseHandler;
+            viewModel.OnClose += CloseHandler;
             TagElement.Closing += TagElementOnClosing;
         }
 
@@ -30,7 +34,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
             viewModel.OnClose -= CloseHandler;
         }
 
-        #endregion
+        #endregion Overrides of BaseBehavior<Window>
 
         #region Handlers
 

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -21,7 +25,7 @@ namespace AlexanderYurtaev.Framework.AttachedProperties
 
         private const int MF_BYPOSITION = 0x400;
         private const int MF_SEPARATOR = 0x800;
-        
+
         private const int WM_SYSCOMMAND = 0x112;
 
         #region Attached property IsActive
@@ -36,7 +40,7 @@ namespace AlexanderYurtaev.Framework.AttachedProperties
 
         public static bool GetIsActive(DependencyObject element)
         {
-            return (bool) element.GetValue(IsActiveProperty);
+            return (bool)element.GetValue(IsActiveProperty);
         }
 
         #endregion Attached property IsActive
@@ -87,7 +91,7 @@ namespace AlexanderYurtaev.Framework.AttachedProperties
 
         public static ICollection<SystemContextItemBase> GetSystemContextMenuItems(DependencyObject element)
         {
-            return (ICollection<SystemContextItemBase>) element.GetValue(SystemContextMenuItemsProperty);
+            return (ICollection<SystemContextItemBase>)element.GetValue(SystemContextMenuItemsProperty);
         }
 
         private static void SystemContextMenuItemsChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -105,7 +109,7 @@ namespace AlexanderYurtaev.Framework.AttachedProperties
             }
         }
 
-        #endregion
+        #endregion Attached property SystemContextMenuItems
 
         #region DllImports
 
@@ -230,7 +234,6 @@ namespace AlexanderYurtaev.Framework.AttachedProperties
     {
         public SystemContextSeparator(int position, int id) : base(position, id, string.Empty)
         {
-
         }
     }
 

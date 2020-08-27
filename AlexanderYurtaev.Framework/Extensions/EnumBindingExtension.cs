@@ -1,4 +1,8 @@
-﻿using System;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 using System.Windows.Markup;
 
 namespace AlexanderYurtaev.Framework.Extensions
@@ -22,6 +26,6 @@ namespace AlexanderYurtaev.Framework.Extensions
             return Enum.GetValues(EnumType);
         }
 
-        #endregion
+        #endregion Overrides of MarkupExtension
     }
 }
