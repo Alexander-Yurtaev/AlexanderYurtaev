@@ -63,8 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttachedProperties\SystemContextMenu.cs" />
-    <Compile Include="LocalizedDescriptionDepositories\ILocalizedDescriptionDepository.cs" />
-    <Compile Include="Attributes\LocalizedDescriptionAttribute.cs" />
+    <Compile Include="Attributes\ResourceLocalizedDescriptionAttribute.cs" />
+    <Compile Include="LocalizedDescriptionProviders\ILocalizedDescriptionProvider.cs" />
+    <Compile Include="Attributes\BaseLocalizedDescriptionAttribute.cs" />
     <Compile Include="BaseModelView.cs" />
     <Compile Include="Behaviors\BaseBehavior.cs" />
     <Compile Include="Behaviors\CloseWindowBehavior.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="EventHandlers\AttachedProperties.EnterKeyDown.cs" />
     <Compile Include="Extensions\EnumBindingExtension.cs" />
     <Compile Include="Extensions\TaskExtension.cs" />
-    <Compile Include="LocalizedDescriptionDepositories\ResourceLocalizedDescriptionDepository.cs" />
+    <Compile Include="LocalizedDescriptionProviders\ResourceLocalizedDescriptionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

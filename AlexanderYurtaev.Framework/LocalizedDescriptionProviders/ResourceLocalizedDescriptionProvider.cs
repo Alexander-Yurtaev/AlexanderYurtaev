@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Resources;
 
-namespace AlexanderYurtaev.Framework.LocalizedDescriptionDepositories
+namespace AlexanderYurtaev.Framework.LocalizedDescriptionProviders
 {
-    public class ResourceLocalizedDescriptionDepository : ILocalizedDescriptionDepository
+    public class ResourceLocalizedDescriptionProvider : ILocalizedDescriptionProvider
     {
         private readonly ResourceManager _resourceManager;
 
-        public ResourceLocalizedDescriptionDepository(Type resourceType)
+        public ResourceLocalizedDescriptionProvider(Type resourceType)
         {
             _resourceManager = new ResourceManager(resourceType);
         }
 
-        #region Implementation of ILocalizedDescriptionDepository
+        #region Implementation of ILocalizedDescriptionProvider
 
         public string GetString(string key)
         {
