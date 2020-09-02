@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="AttachedProperties\SystemContextMenu.cs" />
     <Compile Include="Attributes\ResourceLocalizedDescriptionAttribute.cs" />
-    <Compile Include="LocalizationHelper.cs" />
+    <Compile Include="Helpers\LocalizationHelper.cs" />
     <Compile Include="LocalizedDescriptionProviders\ILocalizedDescriptionProvider.cs" />
     <Compile Include="Attributes\BaseLocalizedDescriptionAttribute.cs" />
     <Compile Include="BaseModelView.cs" />
@@ -111,7 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
-    <Folder Include="Helpers\" />
     <Folder Include="TypeConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
