@@ -9,27 +9,27 @@ namespace AlexanderYurtaev.Framework.Behaviors
 {
     public abstract class BaseBehavior<T> : Behavior<T> where T : FrameworkElement
     {
-        protected T TagElement;
+        protected T TargetElement;
 
         protected override void OnAttached()
         {
             base.OnAttached();
-            TagElement = AssociatedObject;
-            if (TagElement.IsLoaded)
+            TargetElement = AssociatedObject;
+            if (TargetElement.IsLoaded)
             {
                 Subscribe();
-                TagElement.Unloaded += AssociatedObjectOnUnloaded;
+                TargetElement.Unloaded += AssociatedObjectOnUnloaded;
             }
             else
             {
-                TagElement.Loaded += AssociatedObjectOnLoaded;
+                TargetElement.Loaded += AssociatedObjectOnLoaded;
             }
         }
 
         protected override void OnDetaching()
         {
-            TagElement.Loaded -= AssociatedObjectOnLoaded;
-            TagElement.Unloaded -= AssociatedObjectOnUnloaded;
+            TargetElement.Loaded -= AssociatedObjectOnLoaded;
+            TargetElement.Unloaded -= AssociatedObjectOnUnloaded;
             UnSubscribe();
         }
 
@@ -39,15 +39,15 @@ namespace AlexanderYurtaev.Framework.Behaviors
         {
             UnSubscribe();
             Subscribe();
-            TagElement.Unloaded -= AssociatedObjectOnLoaded;
-            TagElement.Unloaded += AssociatedObjectOnUnloaded;
+            TargetElement.Unloaded -= AssociatedObjectOnLoaded;
+            TargetElement.Unloaded += AssociatedObjectOnUnloaded;
         }
 
         private void AssociatedObjectOnUnloaded(object sender, RoutedEventArgs e)
         {
             UnSubscribe();
-            TagElement.Unloaded += AssociatedObjectOnLoaded;
-            TagElement.Unloaded -= AssociatedObjectOnUnloaded;
+            TargetElement.Unloaded += AssociatedObjectOnLoaded;
+            TargetElement.Unloaded -= AssociatedObjectOnUnloaded;
         }
 
         #endregion Hendlers

@@ -23,14 +23,14 @@ namespace AlexanderYurtaev.Framework.Behaviors
 
         protected override void Subscribe()
         {
-            if (!(TagElement.DataContext is ICloseWindow viewModel)) return;
+            if (!(TargetElement.DataContext is ICloseWindow viewModel)) return;
             viewModel.OnClose += CloseHandler;
-            TagElement.Closing += TagElementOnClosing;
+            TargetElement.Closing += TargetElementOnClosing;
         }
 
         protected override void UnSubscribe()
         {
-            if (!(TagElement.DataContext is ICloseWindow viewModel)) return;
+            if (!(TargetElement.DataContext is ICloseWindow viewModel)) return;
             viewModel.OnClose -= CloseHandler;
         }
 
@@ -43,7 +43,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
             AssociatedObject.Close();
         }
 
-        private void TagElementOnClosing(object sender, CancelEventArgs e)
+        private void TargetElementOnClosing(object sender, CancelEventArgs e)
         {
             if (Close != null)
             {
