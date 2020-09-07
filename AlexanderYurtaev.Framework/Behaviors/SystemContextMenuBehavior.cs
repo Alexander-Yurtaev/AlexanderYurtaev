@@ -35,7 +35,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
 
         public bool IsActive
         {
-            get => (bool) GetValue(IsActiveProperty);
+            get => (bool)GetValue(IsActiveProperty);
             set => SetValue(IsActiveProperty, value);
         }
 
@@ -49,7 +49,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
 
         public ContextMenu SystemContextMenu
         {
-            get => (ContextMenu) GetValue(SystemContextMenuProperty);
+            get => (ContextMenu)GetValue(SystemContextMenuProperty);
             set => SetValue(SystemContextMenuProperty, value);
         }
 
@@ -63,7 +63,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
 
         public ICollection<SystemContextItemBase> SystemContextMenuItems
         {
-            get => (ICollection<SystemContextItemBase>) GetValue(SystemContextMenuItemsProperty);
+            get => (ICollection<SystemContextItemBase>)GetValue(SystemContextMenuItemsProperty);
             set => SetValue(SystemContextMenuItemsProperty, value);
         }
 

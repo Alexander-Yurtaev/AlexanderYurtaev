@@ -22,7 +22,7 @@ namespace AlexanderYurtaev.Framework.Helpers
 
         public static double GetAngle(DependencyObject element)
         {
-            return (double) element.GetValue(AngleProperty);
+            return (double)element.GetValue(AngleProperty);
         }
 
         private static void AngleChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)

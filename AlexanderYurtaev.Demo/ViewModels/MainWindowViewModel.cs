@@ -1,7 +1,5 @@
-﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
-
-// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
-
+﻿using AlexanderYurtaev.Framework.Extensions;
+using Prism.Modularity;
 using Prism.Mvvm;
 
 namespace AlexanderYurtaev.Demo.ViewModels
@@ -10,14 +8,20 @@ namespace AlexanderYurtaev.Demo.ViewModels
     {
         private string _title = "Prism Application";
 
+        public MainWindowViewModel(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.IfNullException();
+            moduleCatalog.IfNotTypeException<DirectoryModuleCatalog>(nameof(moduleCatalog));
+
+            ModuleCatalog = moduleCatalog;
+        }
+
+        public IModuleCatalog ModuleCatalog { get; }
+
         public string Title
         {
             get => _title;
             set => SetProperty(ref _title, value);
-        }
-
-        public MainWindowViewModel()
-        {
         }
     }
 }
