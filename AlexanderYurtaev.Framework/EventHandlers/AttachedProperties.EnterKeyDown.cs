@@ -4,14 +4,15 @@
 
 using System.Windows;
 using System.Windows.Input;
+using Prism.Commands;
 
 namespace AlexanderYurtaev.Framework.EventHandlers
 {
     public partial class AttachedProperties
     {
         public static readonly DependencyProperty OnEnterKeyDownProperty = DependencyProperty.RegisterAttached(
-            "OnEnterKeyDown", typeof(ICommand), typeof(AttachedProperties),
-            new PropertyMetadata(default(ICommand), OnOnEnterKeyDown));
+            "OnEnterKeyDown", typeof(DelegateCommand), typeof(AttachedProperties),
+            new PropertyMetadata(default(DelegateCommand), OnOnEnterKeyDown));
 
         private static void OnOnEnterKeyDown(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -26,14 +27,14 @@ namespace AlexanderYurtaev.Framework.EventHandlers
             }
         }
 
-        public static void SetOnEnterKeyDown(DependencyObject element, ICommand value)
+        public static void SetOnEnterKeyDown(DependencyObject element, DelegateCommand value)
         {
             element.SetValue(OnEnterKeyDownProperty, value);
         }
 
-        public static ICommand GetOnEnterKeyDown(DependencyObject element)
+        public static DelegateCommand GetOnEnterKeyDown(DependencyObject element)
         {
-            return (ICommand)element.GetValue(OnEnterKeyDownProperty);
+            return (DelegateCommand)element.GetValue(OnEnterKeyDownProperty);
         }
 
         private static void ElementOnKeyDown(object sender, KeyEventArgs e)
@@ -41,10 +42,10 @@ namespace AlexanderYurtaev.Framework.EventHandlers
             if ((int)e.Key != (int)Key.Enter) return;
             if (!(sender is UIElement element)) return;
 
-            ICommand command = GetOnEnterKeyDown(element);
-            if (command != null && command.CanExecute(element))
+            DelegateCommand command = GetOnEnterKeyDown(element);
+            if (command != null && command.CanExecute())
             {
-                command.Execute(element);
+                command.Execute();
             }
         }
     }

@@ -3,15 +3,15 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System.Windows;
-using System.Windows.Input;
+using Prism.Commands;
 
 namespace AlexanderYurtaev.Framework.EventHandlers
 {
     public partial class AttachedProperties
     {
         public static readonly DependencyProperty OnLoadedProperty = DependencyProperty.RegisterAttached(
-            "OnLoaded", typeof(ICommand), typeof(AttachedProperties),
-            new PropertyMetadata(default(ICommand), OnOnLoaded));
+            "OnLoaded", typeof(DelegateCommand), typeof(AttachedProperties),
+            new PropertyMetadata(default(DelegateCommand), OnOnLoaded));
 
         private static void OnOnLoaded(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -26,24 +26,24 @@ namespace AlexanderYurtaev.Framework.EventHandlers
             }
         }
 
-        public static void SetOnLoaded(DependencyObject element, ICommand value)
+        public static void SetOnLoaded(DependencyObject element, DelegateCommand value)
         {
             element.SetValue(OnLoadedProperty, value);
         }
 
-        public static ICommand GetOnLoaded(DependencyObject element)
+        public static DelegateCommand GetOnLoaded(DependencyObject element)
         {
-            return (ICommand)element.GetValue(OnLoadedProperty);
+            return (DelegateCommand)element.GetValue(OnLoadedProperty);
         }
 
         private static void ElementOnLoaded(object sender, RoutedEventArgs e)
         {
             if (!(sender is FrameworkElement element)) return;
 
-            ICommand command = GetOnLoaded(element);
-            if (command != null && command.CanExecute(element))
+            DelegateCommand command = GetOnLoaded(element);
+            if (command != null && command.CanExecute())
             {
-                command.Execute(element);
+                command.Execute();
             }
         }
     }

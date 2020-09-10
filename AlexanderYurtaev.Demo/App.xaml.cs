@@ -3,6 +3,9 @@ using AlexanderYurtaev.Demo.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using System.Windows;
+using AlexanderYurtaev.Demo.Events;
+using AlexanderYurtaev.Demo.ViewModels;
+using Prism.Events;
 
 namespace AlexanderYurtaev.Demo
 {
@@ -40,15 +43,16 @@ namespace AlexanderYurtaev.Demo
             var moduleManager = Container.Resolve<IModuleManager>();
             moduleManager.LoadModuleCompleted += (sender, args) =>
             {
-                if (args.Error != null)
-                {
-                    MessageBox.Show(Application.Current.MainWindow,
-                        $@"Module {args.ModuleInfo.ModuleName} could not be loaded.\n{args.Error.Message}");
-                    args.IsErrorHandled = true;
-                }
+                if (args.Error == null) return;
+                MessageBox.Show(Application.Current.MainWindow,
+                    $@"Module {args.ModuleInfo.ModuleName} could not be loaded.{Environment.NewLine}{args.Error.Message}");
+                args.IsErrorHandled = true;
             };
 
             base.InitializeModules();
+            
+            var eventAggregator = Container.Resolve<IEventAggregator>();
+            eventAggregator.GetEvent<AllModuleInitialized>().Publish(true);
         }
 
         #endregion

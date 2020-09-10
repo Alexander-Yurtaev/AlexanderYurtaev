@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Attributes\ResourceLocalizedDescriptionAttribute.cs" />
     <Compile Include="Behaviors\SystemContextMenuBehavior.cs" />
+    <Compile Include="EventHandlers\AttachedProperties.TreeView_SelectedItemChanged.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Extensions\StructExtension.cs" />
     <Compile Include="Helpers\LinearGradientBrushHelper.cs" />

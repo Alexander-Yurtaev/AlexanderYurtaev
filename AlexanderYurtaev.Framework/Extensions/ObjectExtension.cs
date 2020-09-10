@@ -4,7 +4,7 @@ namespace AlexanderYurtaev.Framework.Extensions
 {
     public static class ObjectExtension
     {
-        public static void IfNullException(this object obj, string message = "")
+        public static void ThrowIfNull(this object obj, string message = "")
         {
             if (obj != null) return;
             if (!string.IsNullOrEmpty(message))
@@ -15,7 +15,7 @@ namespace AlexanderYurtaev.Framework.Extensions
             throw new NullReferenceException();
         }
 
-        public static void IfNotTypeException<T>(this object obj, string message = "")
+        public static void ThrowIfNotTypeOf<T>(this object obj, string message = "")
         {
             if (obj is T) return;
             if (!string.IsNullOrEmpty(message))

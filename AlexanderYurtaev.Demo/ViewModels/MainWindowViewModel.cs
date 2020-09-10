@@ -1,27 +1,62 @@
-﻿using AlexanderYurtaev.Framework.Extensions;
+﻿using AlexanderYurtaev.Common;
+using AlexanderYurtaev.Common.Data;
+using AlexanderYurtaev.Demo.Events;
+using AlexanderYurtaev.Framework.Extensions;
+using Prism.Commands;
+using Prism.Events;
+using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Mvvm;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AlexanderYurtaev.Demo.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : BaseMainWindowViewModel
     {
+        private readonly IContainerProvider _container;
         private string _title = "Prism Application";
 
-        public MainWindowViewModel(IModuleCatalog moduleCatalog)
+        public MainWindowViewModel(IContainerProvider container, IModuleCatalog moduleCatalog)
         {
-            moduleCatalog.IfNullException();
-            moduleCatalog.IfNotTypeException<DirectoryModuleCatalog>(nameof(moduleCatalog));
+            _container = container;
+            moduleCatalog.ThrowIfNull();
+            moduleCatalog.ThrowIfNotTypeOf<DirectoryModuleCatalog>(nameof(moduleCatalog));
 
-            ModuleCatalog = moduleCatalog;
+            InitCommands();
+
+            var eventAggregator = _container.Resolve<IEventAggregator>();
+            eventAggregator.GetEvent<AllModuleInitialized>().Subscribe(InitModulesCollection);
         }
 
-        public IModuleCatalog ModuleCatalog { get; }
+        public DelegateCommand<object> SelectedItemChanged { get; private set; }
 
         public string Title
         {
             get => _title;
             set => SetProperty(ref _title, value);
+        }
+
+        private void ExecuteMethod(object obj)
+        {
+            if (!(obj is Node node)) return;
+
+            node.Select();
+        }
+
+        private void InitCommands()
+        {
+            SelectedItemChanged = new DelegateCommand<object>(ExecuteMethod);
+        }
+
+        private void InitModulesCollection(bool value)
+        {
+            if (!value) return;
+            var modules = _container.Resolve<List<BaseModule>>();
+            Nodes.Clear();
+            foreach (var node in modules.Select(module => new Node(module, module.Title, module.View, module.Icon, module.Nodes)))
+            {
+                Nodes.Add(node);
+            }
         }
     }
 }
