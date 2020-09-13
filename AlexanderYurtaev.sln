@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexanderYurtaev.Demo", "Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkCode", "Modules\DarkCode\DarkCode.csproj", "{DBA53A04-2987-425A-995A-27C7078BAFCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexanderYurtaev.Styles", "AlexanderYurtaev.Styles\AlexanderYurtaev.Styles.csproj", "{CD2D0E90-9775-4451-9D70-8B4A0453DAD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexanderYurtaev.Controls", "AlexanderYurtaev.Controls\AlexanderYurtaev.Controls.csproj", "{FE80FF45-B912-47C4-ABD5-A7E7AC8D2B18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{DBA53A04-2987-425A-995A-27C7078BAFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBA53A04-2987-425A-995A-27C7078BAFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBA53A04-2987-425A-995A-27C7078BAFCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2D0E90-9775-4451-9D70-8B4A0453DAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2D0E90-9775-4451-9D70-8B4A0453DAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2D0E90-9775-4451-9D70-8B4A0453DAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2D0E90-9775-4451-9D70-8B4A0453DAD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE80FF45-B912-47C4-ABD5-A7E7AC8D2B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE80FF45-B912-47C4-ABD5-A7E7AC8D2B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE80FF45-B912-47C4-ABD5-A7E7AC8D2B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE80FF45-B912-47C4-ABD5-A7E7AC8D2B18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

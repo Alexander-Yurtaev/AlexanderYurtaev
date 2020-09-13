@@ -2,12 +2,51 @@
     x:Class="DarkCode.Views.AnimatedLoginForm"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AlexanderYurtaev.Controls;assembly=AlexanderYurtaev.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
-    prism:ViewModelLocator.AutoWireViewModel="True">
+    d:DesignHeight="600"
+    d:DesignWidth="600"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/AnimatedLoginFormDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
     <Grid>
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Text="{Binding Message}" />
+        <Border Style="{StaticResource MainBorder}">
+            <Grid Style="{StaticResource MainGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="LOGIN" />
+                <TextBox Grid.Row="2" Grid.Column="1" />
+                <PasswordBox Grid.Row="3" Grid.Column="1" />
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Content="Login" />
+            </Grid>
+        </Border>
+        <controls:SourceHyperlink HyperlinkText="darkcode" NavigateUri="https://www.darkcode.info/2018/05/animated-login-form-using-only-html-css.html" />
     </Grid>
 </UserControl>

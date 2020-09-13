@@ -1,11 +1,13 @@
-﻿using System;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+using AlexanderYurtaev.Demo.Events;
 using AlexanderYurtaev.Demo.Views;
+using Prism.Events;
 using Prism.Ioc;
 using Prism.Modularity;
+using System;
 using System.Windows;
-using AlexanderYurtaev.Demo.Events;
-using AlexanderYurtaev.Demo.ViewModels;
-using Prism.Events;
 
 namespace AlexanderYurtaev.Demo
 {
@@ -21,7 +23,6 @@ namespace AlexanderYurtaev.Demo
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
         }
 
         #region Overrides of PrismApplicationBase
@@ -50,11 +51,11 @@ namespace AlexanderYurtaev.Demo
             };
 
             base.InitializeModules();
-            
+
             var eventAggregator = Container.Resolve<IEventAggregator>();
             eventAggregator.GetEvent<AllModuleInitialized>().Publish(true);
         }
 
-        #endregion
+        #endregion Overrides of PrismApplicationBase
     }
 }

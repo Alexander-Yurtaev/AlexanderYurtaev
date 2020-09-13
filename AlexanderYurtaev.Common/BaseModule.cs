@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Media.Imaging;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 using AlexanderYurtaev.Common.Data;
 using Prism.Ioc;
+using System;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace AlexanderYurtaev.Common
 {
@@ -20,7 +23,7 @@ namespace AlexanderYurtaev.Common
         }
 
         public List<Node> Nodes { get; } = new List<Node>();
-        
+
         public abstract string Title { get; }
         public abstract Type View { get; }
         private string AssemblyName => GetType().Assembly.ToString().Split(',')[0];
@@ -48,6 +51,7 @@ namespace AlexanderYurtaev.Common
         public abstract void OnInitialized(IContainerProvider containerProvider);
 
         public abstract void RegisterTypes(IContainerRegistry containerRegistry);
-        #endregion
+
+        #endregion Implementation of IModule
     }
 }

@@ -85,6 +85,10 @@
     <Resource Include="Icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Styles\AnimatedLoginFormDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AnimatedLoginForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,11 +106,16 @@
       <Project>{8f203ee9-4f6b-4f70-8c3e-54d665c2cfc4}</Project>
       <Name>AlexanderYurtaev.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\AlexanderYurtaev.Controls\AlexanderYurtaev.Controls.csproj">
+      <Project>{fe80ff45-b912-47c4-abd5-a7e7ac8d2b18}</Project>
+      <Name>AlexanderYurtaev.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\AlexanderYurtaev.Framework\AlexanderYurtaev.Framework.csproj">
       <Project>{72a8f937-90d2-4709-9c15-653cafca03f7}</Project>
       <Name>AlexanderYurtaev.Framework</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(ProjectDir)..\..\AlexanderYurtaev.Demo\bin\Debug\Modules" mkdir "$(ProjectDir)..\..\AlexanderYurtaev.Demo\bin\Debug\Modules"

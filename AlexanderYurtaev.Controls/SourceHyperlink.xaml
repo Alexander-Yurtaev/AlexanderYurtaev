@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="AlexanderYurtaev.Controls.SourceHyperlink"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AlexanderYurtaev.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Bottom"
+    d:DesignHeight="50"
+    d:DesignWidth="80"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="lable" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style x:Key="link" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Blue" />
+        </Style>
+    </UserControl.Resources>
+
+    <TextBlock Margin="0">
+        <TextBlock Style="{StaticResource lable}" Text="Source:" />
+        <Hyperlink NavigateUri="{Binding NavigateUri, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SourceHyperlink}}" RequestNavigate="Hyperlink_OnRequestNavigate">
+            <TextBlock Style="{StaticResource link}" Text="{Binding HyperlinkText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SourceHyperlink}, FallbackValue='-no link-'}" />
+        </Hyperlink>
+    </TextBlock>
+</UserControl>

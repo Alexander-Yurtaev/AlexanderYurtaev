@@ -64,11 +64,13 @@
   <ItemGroup>
     <Compile Include="Attributes\ResourceLocalizedDescriptionAttribute.cs" />
     <Compile Include="Behaviors\SystemContextMenuBehavior.cs" />
+    <Compile Include="Converters\TextInputToVisibilityConverter.cs" />
     <Compile Include="EventHandlers\AttachedProperties.TreeView_SelectedItemChanged.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Extensions\StructExtension.cs" />
     <Compile Include="Helpers\LinearGradientBrushHelper.cs" />
     <Compile Include="Helpers\LocalizationHelper.cs" />
+    <Compile Include="Helpers\PasswordBoxBindableWrapper.cs" />
     <Compile Include="LocalizedDescriptionProviders\ILocalizedDescriptionProvider.cs" />
     <Compile Include="Attributes\BaseLocalizedDescriptionAttribute.cs" />
     <Compile Include="BaseModelView.cs" />
@@ -115,7 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AttachedProperties\" />
-    <Folder Include="Converters\" />
     <Folder Include="TypeConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,16 +10,18 @@
     xmlns:prism="http://prismlibrary.com/"
     xmlns:viewModels="clr-namespace:AlexanderYurtaev.Demo.ViewModels"
     Title="{Binding Title}"
-    Width="525"
-    Height="350"
     d:DataContext="{d:DesignInstance designerMode:DesignerVewModel,
                                      IsDesignTimeCreatable=True}"
+    d:DesignHeight="300"
+    d:DesignWidth="500"
     prism:ViewModelLocator.AutoWireViewModel="True"
+    WindowState="Maximized"
     mc:Ignorable="d">
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AlexanderYurtaev.Styles;component/StylesDictionary.xaml" />
                 <ResourceDictionary Source="../MainDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
@@ -35,8 +37,9 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="4*" />
         </Grid.ColumnDefinitions>
 
         <TreeView
@@ -60,6 +63,7 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static common:Constants.MainRegionName}" />
+        <GridSplitter Grid.Column="1" Style="{StaticResource VerticalGridSplitter}" />
+        <ContentControl Grid.Column="2" prism:RegionManager.RegionName="{x:Static common:Constants.MainRegionName}" />
     </Grid>
 </Window>

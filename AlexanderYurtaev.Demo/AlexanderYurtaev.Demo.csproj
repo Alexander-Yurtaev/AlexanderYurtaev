@@ -109,9 +109,17 @@
       <Project>{8F203EE9-4F6B-4F70-8C3E-54D665C2CFC4}</Project>
       <Name>AlexanderYurtaev.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AlexanderYurtaev.Controls\AlexanderYurtaev.Controls.csproj">
+      <Project>{fe80ff45-b912-47c4-abd5-a7e7ac8d2b18}</Project>
+      <Name>AlexanderYurtaev.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AlexanderYurtaev.Framework\AlexanderYurtaev.Framework.csproj">
       <Project>{72a8f937-90d2-4709-9c15-653cafca03f7}</Project>
       <Name>AlexanderYurtaev.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlexanderYurtaev.Styles\AlexanderYurtaev.Styles.csproj">
+      <Project>{cd2d0e90-9775-4451-9d70-8b4a0453dad8}</Project>
+      <Name>AlexanderYurtaev.Styles</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

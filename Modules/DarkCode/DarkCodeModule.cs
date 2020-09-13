@@ -1,22 +1,23 @@
-﻿using System;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 using AlexanderYurtaev.Common;
 using AlexanderYurtaev.Common.Data;
 using DarkCode.ViewModels;
 using DarkCode.Views;
 using Prism.Ioc;
 using Prism.Regions;
+using System;
 
 namespace DarkCode
 {
     public class DarkCodeModule : BaseModule
     {
         private readonly IRegionManager _regionManager;
-        private readonly IContainerProvider _containerProvider;
 
-        public DarkCodeModule(IRegionManager regionManager, IContainerProvider containerProvider)
+        public DarkCodeModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
-            _containerProvider = containerProvider;
             InitChildModuleItems();
         }
 
@@ -40,7 +41,7 @@ namespace DarkCode
             //_regionManager.Regions["MyRegion"].Add(myView, "MyView");
             //var theView = _regionManager.Regions["MyRegion"].GetView("MyView");
             //_regionManager.Regions["MyRegion"].Remove(theView);
-            
+
             var region = _regionManager.Regions[Constants.MainRegionName];
             region.RemoveAll();
             _regionManager.RegisterViewWithRegion(Constants.MainRegionName, viewType);

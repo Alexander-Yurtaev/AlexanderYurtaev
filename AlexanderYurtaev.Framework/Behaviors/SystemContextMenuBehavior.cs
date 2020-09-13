@@ -1,7 +1,6 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +52,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
             set => SetValue(SystemContextMenuProperty, value);
         }
 
-        #endregion
+        #endregion SystemContextMenu
 
         #region SystemContextItemBase
 
@@ -91,7 +90,7 @@ namespace AlexanderYurtaev.Framework.Behaviors
             RemoveHook(TargetElement);
         }
 
-        #endregion
+        #endregion Overrides of BaseBehavior<Window>
 
         #region Private Methods
 

@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Media.Imaging;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 using AlexanderYurtaev.Common;
 using AlexanderYurtaev.Common.Data;
 using Prism.Ioc;
+using System;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace AlexanderYurtaev.Demo.ViewModels
 {
@@ -27,7 +30,8 @@ namespace AlexanderYurtaev.Demo.ViewModels
         {
             throw new System.NotImplementedException();
         }
-        #endregion
+
+        #endregion Implementation of IModule
 
         #region Implementation of IBaseModule
 
@@ -54,7 +58,9 @@ namespace AlexanderYurtaev.Demo.ViewModels
         {
             throw new NotImplementedException();
         }
-        #endregion
+
+        #endregion Implementation of IBaseModule
+
         private string AssemblyName => GetType().Assembly.ToString().Split(',')[0];
     }
 }
