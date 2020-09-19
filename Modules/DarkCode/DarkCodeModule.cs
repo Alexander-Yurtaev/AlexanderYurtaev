@@ -33,6 +33,7 @@ namespace DarkCode
         {
             containerRegistry.RegisterSingleton(typeof(MainView));
             containerRegistry.RegisterSingleton(typeof(AnimatedLoginForm));
+            containerRegistry.RegisterSingleton(typeof(FloatingGhostView));
             PreRegisterModule(containerRegistry);
         }
 
@@ -50,6 +51,7 @@ namespace DarkCode
         private void InitChildModuleItems()
         {
             Nodes.Add(new Node(this, AnimatedLoginFormViewModel.Title, typeof(AnimatedLoginForm), Icon));
+            Nodes.Add(new Node(this, FloatingGhostViewModel.Title, typeof(FloatingGhostView), Icon));
         }
     }
 }

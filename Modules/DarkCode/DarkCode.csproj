@@ -49,6 +49,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FloatingGhost.xaml.cs">
+      <DependentUpon>FloatingGhost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DarkCodeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -64,9 +67,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ViewModels\AnimatedLoginFormViewModel.cs" />
+    <Compile Include="ViewModels\FloatingGhostViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\AnimatedLoginForm.xaml.cs">
       <DependentUpon>AnimatedLoginForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FloatingGhostView.xaml.cs">
+      <DependentUpon>FloatingGhostView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -85,11 +92,19 @@
     <Resource Include="Icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\FloatingGhost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\AnimatedLoginFormDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AnimatedLoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FloatingGhostView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
