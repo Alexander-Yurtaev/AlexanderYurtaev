@@ -105,6 +105,8 @@
     <Compile Include="Services\SaveImageFileService.cs" />
     <Compile Include="Services\OpenImageFileService.cs" />
     <Compile Include="Services\ShowDialogService.cs" />
+    <Compile Include="UI\VisibleableColumnDefinition.cs" />
+    <Compile Include="UI\VisibleableRowDefinition.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
