@@ -76,7 +76,7 @@
     <Compile Include="BaseModelView.cs" />
     <Compile Include="Behaviors\BaseBehavior.cs" />
     <Compile Include="Behaviors\CloseWindowBehavior.cs" />
-    <Compile Include="EnumDescriptionTypeConverter.cs" />
+    <Compile Include="Converters\EnumDescriptionTypeConverter.cs" />
     <Compile Include="EventHandlers\AttachedProperties.Loaded.cs" />
     <Compile Include="EventHandlers\AttachedProperties.PreviewEnterKeyDown.cs" />
     <Compile Include="EventHandlers\AttachedProperties.EnterKeyDown.cs" />
@@ -105,8 +105,8 @@
     <Compile Include="Services\SaveImageFileService.cs" />
     <Compile Include="Services\OpenImageFileService.cs" />
     <Compile Include="Services\ShowDialogService.cs" />
-    <Compile Include="UI\VisibleableColumnDefinition.cs" />
-    <Compile Include="UI\VisibleableRowDefinition.cs" />
+    <Compile Include="UI\Visibleable\VisibleableColumnDefinition.cs" />
+    <Compile Include="UI\Visibleable\VisibleableRowDefinition.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -120,6 +120,7 @@
   <ItemGroup>
     <Folder Include="AttachedProperties\" />
     <Folder Include="TypeConverters\" />
+    <Folder Include="UI\Scalability\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

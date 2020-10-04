@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace AlexanderYurtaev.Framework.UI
+namespace AlexanderYurtaev.Framework.UI.Visibleable
 {
     public class VisibleableColumnDefinition : ColumnDefinition
     {
