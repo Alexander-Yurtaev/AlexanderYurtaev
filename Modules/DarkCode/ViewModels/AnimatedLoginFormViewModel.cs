@@ -1,25 +1,18 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
-using Prism.Mvvm;
+
+using AlexanderYurtaev.Common;
 
 namespace DarkCode.ViewModels
 {
-    public class AnimatedLoginFormViewModel : BindableBase
+    public class AnimatedLoginFormModuleViewModel : BaseModuleViewModel
     {
-        public const string Title = "Animated Login Form";
+        #region Overrides of BaseModuleViewModel
 
-        private string _message;
+        public override string Title => "Animated Login Form";
+        protected override string IconName => "AnimatedLoginForm";
 
-        public string Message
-        {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
-        }
-
-        public AnimatedLoginFormViewModel()
-        {
-            Message = "Animated Login Form from your Prism Module";
-        }
+        #endregion Overrides of BaseModuleViewModel
     }
 }

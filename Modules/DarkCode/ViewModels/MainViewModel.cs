@@ -11,8 +11,8 @@ namespace DarkCode.ViewModels
 
         public string Message
         {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
+            get => _message;
+            set => SetProperty(ref _message, value);
         }
 
         public MainViewModel()

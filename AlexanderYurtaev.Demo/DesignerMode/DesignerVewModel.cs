@@ -14,7 +14,7 @@ namespace AlexanderYurtaev.Demo.DesignerMode
         {
             var modules = Enumerable.Range(1, 10)
                 .Select(i => new DesignerModule($"Item {i}"))
-                .Select(m => new Node(m, m.Title, null, m.Icon, m.Nodes));
+                .Select(m => new Node(m, null, m.Title, m.Icon, m.Nodes));
 
             Nodes.AddRange(modules);
         }

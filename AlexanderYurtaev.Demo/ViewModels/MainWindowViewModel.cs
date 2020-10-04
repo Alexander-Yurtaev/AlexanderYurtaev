@@ -56,7 +56,7 @@ namespace AlexanderYurtaev.Demo.ViewModels
             if (!value) return;
             var modules = _container.Resolve<List<BaseModule>>();
             Nodes.Clear();
-            foreach (var node in modules.Select(module => new Node(module, module.Title, module.View, module.Icon, module.Nodes)))
+            foreach (var node in modules.Select(module => new Node(module, module.View, module.Title, module.Icon, module.Nodes)))
             {
                 Nodes.Add(node);
             }

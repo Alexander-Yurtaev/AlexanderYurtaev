@@ -7,11 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     HorizontalAlignment="Right"
     VerticalAlignment="Bottom"
-    d:DesignHeight="50"
-    d:DesignWidth="80"
+    d:DesignHeight="42"
+    d:DesignWidth="320"
     mc:Ignorable="d">
 
     <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <!--<Setter Property="Typography.Capitals" Value="AllSmallCaps" />-->
+            <Setter Property="FontWeight" Value="450" />
+            <Setter Property="FontSize" Value="32" />
+            <Setter Property="Padding" Value="40,0" />
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif" />
+        </Style>
         <Style x:Key="lable" TargetType="TextBlock">
             <Setter Property="Foreground" Value="White" />
         </Style>
@@ -21,7 +30,7 @@
     </UserControl.Resources>
 
     <TextBlock Margin="0">
-        <TextBlock Style="{StaticResource lable}" Text="Source:" />
+        <TextBlock Style="{StaticResource lable}" Text="CSS-Source:" />
         <Hyperlink NavigateUri="{Binding NavigateUri, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SourceHyperlink}}" RequestNavigate="Hyperlink_OnRequestNavigate">
             <TextBlock Style="{StaticResource link}" Text="{Binding HyperlinkText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SourceHyperlink}, FallbackValue='-no link-'}" />
         </Hyperlink>

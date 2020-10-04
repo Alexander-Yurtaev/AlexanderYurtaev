@@ -57,8 +57,15 @@
                         <Image
                             Grid.Column="0"
                             Width="32"
+                            Height="32"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
                             Source="{Binding Icon}" />
-                        <TextBlock Grid.Column="1" Text="{Binding Title}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            Text="{Binding Title, FallbackValue='To title'}" />
                     </Grid>
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>

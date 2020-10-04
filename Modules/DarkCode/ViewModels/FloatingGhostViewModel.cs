@@ -1,12 +1,17 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
-using Prism.Mvvm;
+using AlexanderYurtaev.Common;
 
 namespace DarkCode.ViewModels
 {
-    public class FloatingGhostViewModel : BindableBase
+    public class FloatingGhostViewModel : BaseModuleViewModel
     {
-        public const string Title = "Floating Ghost";
+        #region Overrides of BaseModuleViewModel
+
+        public override string Title => "Floating Ghost";
+        protected override string IconName => "FloatingGhost";
+
+        #endregion Overrides of BaseModuleViewModel
     }
 }

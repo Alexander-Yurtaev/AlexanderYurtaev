@@ -9,19 +9,21 @@ namespace AlexanderYurtaev.Common.Data
 {
     public class Node
     {
-        public Node(IBaseModule module, string title, Type view, BitmapImage icon, List<Node> nodes = null)
+        private readonly BaseModuleViewModel _moduleViewModel;
+
+        public Node(IBaseModule module, Type view, string title, BitmapImage icon, List<Node> nodes = null)
         {
             Module = module;
-            Title = title;
             View = view;
+            Title = title;
             Icon = icon;
             Nodes = nodes ?? new List<Node>();
         }
 
         public IBaseModule Module { get; set; }
-        public string Title { get; set; }
+        public string Title { get; }
         public Type View { get; set; }
-        public BitmapImage Icon { get; set; }
+        public BitmapImage Icon { get; }
         public List<Node> Nodes { get; set; }
 
         public void Select()

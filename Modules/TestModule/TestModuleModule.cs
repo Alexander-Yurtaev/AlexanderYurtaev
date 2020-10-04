@@ -47,7 +47,7 @@ namespace TestModule
 
         private void InitChildModuleItems()
         {
-            Nodes.Add(new Node(this, "Test module", typeof(ViewA), Icon));
+            Nodes.Add(new Node(this, typeof(ViewA), "Test module", Icon));
         }
     }
 }

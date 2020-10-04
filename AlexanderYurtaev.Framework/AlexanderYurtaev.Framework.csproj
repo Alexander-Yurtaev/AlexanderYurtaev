@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AttachedProperties\" />
+    <Folder Include="Themes\" />
     <Folder Include="TypeConverters\" />
     <Folder Include="UI\Scalability\" />
   </ItemGroup>

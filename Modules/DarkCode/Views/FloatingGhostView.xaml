@@ -3,10 +3,31 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:DarkCode.Controls"
+    xmlns:controls1="clr-namespace:AlexanderYurtaev.Controls;assembly=AlexanderYurtaev.Controls"
     xmlns:prism="http://prismlibrary.com/"
     prism:ViewModelLocator.AutoWireViewModel="True">
 
     <Grid Background="#2c3a47">
-        <controls:FloatingGhost />
+        <Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <controls:FloatingGhost Grid.Row="0" Grid.Column="0" />
+
+                <controls:FloatingGhost Grid.Row="1" Grid.Column="1">
+                    <controls:FloatingGhost.RenderTransform>
+                        <ScaleTransform CenterX="90" CenterY="90" ScaleX="0.3" ScaleY="0.3" />
+                    </controls:FloatingGhost.RenderTransform>
+                </controls:FloatingGhost>
+            </Grid>
+        </Border>
+        <controls1:SourceHyperlink HyperlinkText="darkcode" NavigateUri="https://www.darkcode.info/2020/08/awesome-floating-ghost-using-only-html.html" />
     </Grid>
 </UserControl>

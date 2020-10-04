@@ -46,8 +46,8 @@ namespace AlexanderYurtaev.Demo.ViewModels
 
         public List<Node> Nodes => new List<Node>
         {
-            new Node(null, $"{Title}1", null, null),
-            new Node(null, $"{Title}2", null, null),
+            new Node(null, null, $"{Title}1", null),
+            new Node(null, null, $"{Title}2", null),
         };
 
         public string Title { get; }

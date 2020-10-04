@@ -5,244 +5,141 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:DarkCode.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="140"
-    Height="160"
+    Width="180"
+    Height="180"
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <Style TargetType="local:FloatingGhost">
-            <Setter Property="Fill" Value="#f2f2f2" />
-        </Style>
-        <Style x:Key="MainGrid" TargetType="Grid">
-            <Setter Property="Width" Value="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}}" />
-            <Setter Property="Height" Value="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}}" />
-            <Setter Property="Margin" Value="0" />
-        </Style>
-        <Style x:Key="Ghost" TargetType="Border">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Stretch" />
-            <Setter Property="Background" Value="{Binding Fill, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}}" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="CornerRadius" Value="70,70,0,0" />
-        </Style>
-        <Style x:Key="Hand" TargetType="Border">
-            <Setter Property="Width" Value="20" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Background" Value="{Binding Fill, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}}" />
-        </Style>
+
+        <Color x:Key="GhostBackground">#f2f2f2</Color>
+        <SolidColorBrush x:Key="BrushGhostBackground" Color="{StaticResource GhostBackground}" />
+
+        <Color x:Key="FaceColor">#2c3a47</Color>
+        <SolidColorBrush x:Key="BrushFaceColor" Color="{StaticResource FaceColor}" />
+
         <Style x:Key="Eye" TargetType="Ellipse">
             <Setter Property="Width" Value="24" />
             <Setter Property="Height" Value="24" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Fill" Value="#2c3a47" />
+            <Setter Property="Fill" Value="{StaticResource BrushFaceColor}" />
         </Style>
         <Style x:Key="Mouth" TargetType="Border">
-            <Setter Property="Height" Value="20" />
-            <Setter Property="Width" Value="40" />
-            <Setter Property="Background" Value="#2c3a47" />
+            <Setter Property="Background" Value="{StaticResource BrushFaceColor}" />
             <Setter Property="CornerRadius" Value="0 0 20 20" />
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="20" />
         </Style>
         <Style x:Key="Foot" TargetType="Border">
-            <Setter Property="Height" Value="20" />
-            <Setter Property="Background" Value="{Binding Fill, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}}" />
+            <Setter Property="Background" Value="{Binding Fill, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}, FallbackValue={StaticResource BrushGhostBackground}}" />
             <Setter Property="CornerRadius" Value="0 0 20 20" />
         </Style>
-
-        <EasingDoubleKeyFrame
-            x:Key="StartFrame"
-            KeyTime="0:0:2"
-            Value="60">
-            <EasingDoubleKeyFrame.EasingFunction>
-                <SineEase EasingMode="EaseInOut" />
-            </EasingDoubleKeyFrame.EasingFunction>
-        </EasingDoubleKeyFrame>
-        <EasingDoubleKeyFrame
-            x:Key="EndFrame"
-            KeyTime="0:0:2"
-            Value="0">
-            <EasingDoubleKeyFrame.EasingFunction>
-                <SineEase EasingMode="EaseInOut" />
-            </EasingDoubleKeyFrame.EasingFunction>
-        </EasingDoubleKeyFrame>
-
-        <Storyboard x:Key="LoadedStoryboard" RepeatBehavior="Forever">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ghost" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="StartFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_LeftHand" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="StartFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_RightHand" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="StartFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Face" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="StartFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Feet" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="StartFrame" />
-            </DoubleAnimationUsingKeyFrames>
-
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ghost" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="EndFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_LeftHand" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="EndFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_RightHand" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="EndFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Face" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="EndFrame" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Feet" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <StaticResource ResourceKey="EndFrame" />
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+        <Style
+            x:Key="FirstFoot"
+            BasedOn="{StaticResource Foot}"
+            TargetType="Border">
+            <Setter Property="CornerRadius" Value="0 0 20 12" />
+        </Style>
+        <Style
+            x:Key="LastFoot"
+            BasedOn="{StaticResource Foot}"
+            TargetType="Border">
+            <Setter Property="CornerRadius" Value="0 0 12 20" />
+        </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="PART_MainGrid" Style="{StaticResource MainGrid}" />
-
-    <!--<Grid
-        x:Name="PART_MainGrid"
-        ShowGridLines="True"
-        Style="{StaticResource MainGrid}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="20" />
-        </Grid.ColumnDefinitions>
-
-        <Border
-            x:Name="PART_Ghost"
-            Grid.RowSpan="4"
-            Grid.Column="1"
-            Margin="0,2,0,18.002"
-            RenderTransformOrigin="0.5,0.5"
-            Style="{StaticResource Ghost}">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Border
-            x:Name="PART_LeftHand"
-            Grid.Row="1"
-            Grid.RowSpan="3"
-            Grid.Column="0"
-            Margin="0,2.724,0,21.205"
-            CornerRadius="20,0,0,20"
-            RenderTransformOrigin="0.5,0.5"
-            Style="{StaticResource Hand}">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Border
-            x:Name="PART_RightHand"
-            Grid.Row="1"
-            Grid.RowSpan="3"
-            Grid.Column="2"
-            Margin="0,2.724,0,21.205"
-            CornerRadius="0,20,20,0"
-            RenderTransformOrigin="0.5,0.5"
-            Style="{StaticResource Hand}">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Grid
-            x:Name="PART_Face"
-            Grid.RowSpan="2"
-            Grid.Column="1"
-            Margin="0,13.897,0,6.871"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Grid.RenderTransform>
+    <Grid x:Name="PART_GhostGrid">
+        <Grid.RenderTransform>
+            <TranslateTransform x:Name="TranslateTransform" />
+        </Grid.RenderTransform>
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="14" />
-                <ColumnDefinition />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+
+            <Border
+                x:Name="PART_Ghost"
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                Grid.Column="1"
+                Margin="0"
+                Background="{Binding Fill, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}, FallbackValue={StaticResource BrushGhostBackground}}"
+                BorderThickness="0"
+                CornerRadius="70,70,0,0" />
+            <Border
+                x:Name="PART_Hands"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Width="180"
+                Background="{Binding Fill, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:FloatingGhost}, FallbackValue={StaticResource BrushGhostBackground}}"
+                CornerRadius="20" />
+            <Grid
+                x:Name="PART_Feet"
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="0,-3,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Style="{StaticResource FirstFoot}" />
+                <Border Grid.Column="1" Style="{StaticResource Foot}" />
+                <Border Grid.Column="2" Style="{StaticResource Foot}" />
+                <Border Grid.Column="3" Style="{StaticResource LastFoot}" />
+            </Grid>
+        </Grid>
+        <Grid
+            x:Name="PART_Face"
+            Width="100"
+            Height="58"
+            Margin="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="24" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="24" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
                 <RowDefinition Height="24" />
-                <RowDefinition />
+                <RowDefinition Height="14" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <Ellipse
                 x:Name="PART_LeftEye"
-                Grid.Row="0"
-                Grid.Column="0"
+                Grid.Row="1"
+                Grid.Column="1"
                 Style="{StaticResource Eye}" />
             <Ellipse
                 x:Name="PART_RightEye"
-                Grid.Row="0"
-                Grid.Column="2"
+                Grid.Row="1"
+                Grid.Column="3"
                 Style="{StaticResource Eye}" />
             <Border
                 x:Name="PART_Mouth"
-                Grid.Row="2"
-                Grid.Column="0"
+                Grid.Row="3"
+                Grid.Column="1"
                 Grid.ColumnSpan="3"
                 Style="{StaticResource Mouth}" />
         </Grid>
-        <Grid
-            x:Name="PART_Feet"
-            Grid.Row="3"
-            Grid.Column="1"
-            Margin="0,1.999,0,-2"
-            RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Grid.RenderTransform>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-
-            <Border Grid.Column="0" Style="{StaticResource Foot}" />
-            <Border Grid.Column="1" Style="{StaticResource Foot}" />
-            <Border Grid.Column="2" Style="{StaticResource Foot}" />
-            <Border Grid.Column="3" Style="{StaticResource Foot}" />
-        </Grid>
-    </Grid>-->
+    </Grid>
 
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="Mouse.MouseEnter">
@@ -292,7 +189,31 @@
             </EventTrigger.Actions>
         </EventTrigger>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard Storyboard="{StaticResource LoadedStoryboard}" />
+            <BeginStoryboard Name="FloatingGhostStoryboard">
+                <Storyboard RepeatBehavior="Forever">
+                    <DoubleAnimationUsingKeyFrames
+                        BeginTime="00:00:01"
+                        RepeatBehavior="Forever"
+                        Storyboard.TargetName="TranslateTransform"
+                        Storyboard.TargetProperty="Y">
+                        <DoubleAnimationUsingKeyFrames.KeyFrames>
+                            <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-30">
+                                <EasingDoubleKeyFrame.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut" />
+                                </EasingDoubleKeyFrame.EasingFunction>
+                            </EasingDoubleKeyFrame>
+                            <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0">
+                                <EasingDoubleKeyFrame.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut" />
+                                </EasingDoubleKeyFrame.EasingFunction>
+                            </EasingDoubleKeyFrame>
+                        </DoubleAnimationUsingKeyFrames.KeyFrames>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+            <StopStoryboard BeginStoryboardName="FloatingGhostStoryboard" />
         </EventTrigger>
     </UserControl.Triggers>
 </UserControl>

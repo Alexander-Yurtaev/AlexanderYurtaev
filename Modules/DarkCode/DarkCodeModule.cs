@@ -18,7 +18,6 @@ namespace DarkCode
         public DarkCodeModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
-            InitChildModuleItems();
         }
 
         public override string Title => "DarkCode";
@@ -34,7 +33,9 @@ namespace DarkCode
             containerRegistry.RegisterSingleton(typeof(MainView));
             containerRegistry.RegisterSingleton(typeof(AnimatedLoginForm));
             containerRegistry.RegisterSingleton(typeof(FloatingGhostView));
+
             PreRegisterModule(containerRegistry);
+            InitChildModuleItems();
         }
 
         public override void Select(Type viewType)
@@ -50,8 +51,16 @@ namespace DarkCode
 
         private void InitChildModuleItems()
         {
-            Nodes.Add(new Node(this, AnimatedLoginFormViewModel.Title, typeof(AnimatedLoginForm), Icon));
-            Nodes.Add(new Node(this, FloatingGhostViewModel.Title, typeof(FloatingGhostView), Icon));
+            var animatedLoginFormModuleViewModel = ContainerLocator.Current.Resolve<AnimatedLoginFormModuleViewModel>();
+            InitChildModuleItem(typeof(AnimatedLoginForm), animatedLoginFormModuleViewModel);
+
+            var floatingGhostViewModel = ContainerLocator.Current.Resolve<FloatingGhostViewModel>();
+            InitChildModuleItem(typeof(FloatingGhostView), floatingGhostViewModel);
+        }
+
+        private void InitChildModuleItem(Type viewType, BaseModuleViewModel moduleViewModel)
+        {
+            Nodes.Add(new Node(this, viewType, moduleViewModel.Title, moduleViewModel.Icon));
         }
     }
 }
