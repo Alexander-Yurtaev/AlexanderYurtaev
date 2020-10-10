@@ -8,6 +8,7 @@ using DarkCode.Views;
 using Prism.Ioc;
 using Prism.Regions;
 using System;
+using DarkCode.Controls;
 
 namespace DarkCode
 {
@@ -33,7 +34,8 @@ namespace DarkCode
             containerRegistry.RegisterSingleton(typeof(MainView));
             containerRegistry.RegisterSingleton(typeof(AnimatedLoginForm));
             containerRegistry.RegisterSingleton(typeof(FloatingGhostView));
-
+            containerRegistry.RegisterSingleton(typeof(AmazingHoverEffectOnSocialMediaButtonsView));
+            
             PreRegisterModule(containerRegistry);
             InitChildModuleItems();
         }
@@ -56,6 +58,9 @@ namespace DarkCode
 
             var floatingGhostViewModel = ContainerLocator.Current.Resolve<FloatingGhostViewModel>();
             InitChildModuleItem(typeof(FloatingGhostView), floatingGhostViewModel);
+
+            var amazingHoverEffectOnSocialMediaButtonsViewModel = ContainerLocator.Current.Resolve<AmazingHoverEffectOnSocialMediaButtonsViewModel>();
+            InitChildModuleItem(typeof(AmazingHoverEffectOnSocialMediaButtonsView), amazingHoverEffectOnSocialMediaButtonsViewModel);
         }
 
         private void InitChildModuleItem(Type viewType, BaseModuleViewModel moduleViewModel)

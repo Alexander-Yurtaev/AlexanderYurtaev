@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="DarkCode.Views.AmazingHoverEffectOnSocialMediaButtonsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AlexanderYurtaev.Controls;assembly=AlexanderYurtaev.Controls"
+    xmlns:controls1="clr-namespace:DarkCode.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DarkCode.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid Background="#2c3a47">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <controls1:AmazingHoverEffectOnSocialMediaButtons
+                Grid.Row="1"
+                BeHanceLink="https://behance.net/test"
+                FacebookLink="https://facebook.com/test"
+                Foreground="{Binding ElementName=ColorPicker, Path=SelectedItem.Tag}"
+                InstagramLink="https://instragram.com/test"
+                LinkedInLink="https://linkedin.com/test"
+                ShowBeHanceLink="{Binding ElementName=ShowBeHanceCheckBox, Path=IsChecked}"
+                ShowFacebookLink="{Binding ElementName=ShowFacebookCheckBox, Path=IsChecked}"
+                ShowInstagramLink="{Binding ElementName=ShowInstagramCheckBox, Path=IsChecked}"
+                ShowLinkedInLink="{Binding ElementName=ShowLinkedInCheckBox, Path=IsChecked}"
+                ShowTwitterLink="{Binding ElementName=ShowTwitterCheckBox, Path=IsChecked}"
+                ShowYoutubeLink="{Binding ElementName=ShowYoutubeCheckBox, Path=IsChecked}"
+                TwitterLink="https://twitter.com/test"
+                YoutubeLink="https://youtube.com/test" />
+
+            <StackPanel
+                Grid.Row="2"
+                Width="200"
+                HorizontalAlignment="Center">
+                <ComboBox x:Name="ColorPicker" SelectedIndex="0">
+                    <ComboBoxItem Content="Default" Tag="{x:Null}" />
+                    <ComboBoxItem Content="Orange">
+                        <ComboBoxItem.Tag>
+                            <SolidColorBrush Color="Orange" />
+                        </ComboBoxItem.Tag>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="Rainbow">
+                        <ComboBoxItem.Tag>
+                            <LinearGradientBrush>
+                                <GradientStop Offset="0.0" Color="Yellow" />
+                                <GradientStop Offset="0.25" Color="Red" />
+                                <GradientStop Offset="0.75" Color="Blue" />
+                                <GradientStop Offset="1.0" Color="LimeGreen" />
+                            </LinearGradientBrush>
+                        </ComboBoxItem.Tag>
+                    </ComboBoxItem>
+                </ComboBox>
+                <CheckBox x:Name="ShowFacebookCheckBox" IsChecked="True">Facebook</CheckBox>
+                <CheckBox x:Name="ShowTwitterCheckBox" IsChecked="True">Twitter</CheckBox>
+                <CheckBox x:Name="ShowInstagramCheckBox" IsChecked="True">Instagram</CheckBox>
+                <CheckBox x:Name="ShowYoutubeCheckBox" IsChecked="True">Youtube</CheckBox>
+                <CheckBox x:Name="ShowLinkedInCheckBox" IsChecked="True">LinkedIn</CheckBox>
+                <CheckBox x:Name="ShowBeHanceCheckBox" IsChecked="True">BeHance</CheckBox>
+            </StackPanel>
+        </Grid>
+
+        <controls:SourceHyperlink HyperlinkText="darkcode" NavigateUri="https://www.darkcode.info/2020/07/amazing-hover-effect-on-social-media.html" />
+    </Grid>
+</UserControl>
