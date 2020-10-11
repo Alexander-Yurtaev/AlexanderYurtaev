@@ -52,6 +52,30 @@
     <Compile Include="Controls\FloatingGhost.xaml.cs">
       <DependentUpon>FloatingGhost.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20170904\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20170930\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20180531\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20181018\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20190422\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20191011\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20200329\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialMediaButtons\20200724\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DarkCodeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -89,6 +113,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Controls\SocialMediaButtons\20170904\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20170930\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20180531\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20181018\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20190422\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20191011\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20200329\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\20200724\ReadMe.md" />
     <None Include="Controls\SocialMediaButtons\ReadMe.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,6 +133,38 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\FloatingGhost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20170904\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20170930\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20180531\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20181018\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20190422\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20191011\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20200329\SocialMediaButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SocialMediaButtons\20200724\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
