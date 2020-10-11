@@ -11,11 +11,11 @@ using System.Windows.Navigation;
 namespace DarkCode.Controls
 {
     /// <summary>
-    /// Interaction logic for AmazingHoverEffectOnSocialMediaButtons.xaml
+    /// Interaction logic for SocialMediaButtons.xaml
     /// </summary>
-    public partial class AmazingHoverEffectOnSocialMediaButtons : UserControl
+    public partial class SocialMediaButtons : UserControl
     {
-        public AmazingHoverEffectOnSocialMediaButtons()
+        public SocialMediaButtons()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace DarkCode.Controls
         #region FacebookLink
 
         public static readonly DependencyProperty FacebookLinkProperty = DependencyProperty.Register(
-            "FacebookLink", typeof(string), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "FacebookLink", typeof(string), typeof(SocialMediaButtons),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string FacebookLink
@@ -49,7 +49,7 @@ namespace DarkCode.Controls
         #region ShowFacebookLink
 
         public static readonly DependencyProperty ShowFacebookLinkProperty = DependencyProperty.Register(
-            "ShowFacebookLink", typeof(bool), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "ShowFacebookLink", typeof(bool), typeof(SocialMediaButtons),
             new PropertyMetadata(true));
 
         public bool ShowFacebookLink
@@ -67,7 +67,7 @@ namespace DarkCode.Controls
         #region TwitterLink
 
         public static readonly DependencyProperty TwitterLinkProperty = DependencyProperty.Register(
-            "TwitterLink", typeof(string), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "TwitterLink", typeof(string), typeof(SocialMediaButtons),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string TwitterLink
@@ -81,7 +81,7 @@ namespace DarkCode.Controls
         #region ShowTwitterLink
 
         public static readonly DependencyProperty ShowTwitterLinkProperty = DependencyProperty.Register(
-            "ShowTwitterLink", typeof(bool), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "ShowTwitterLink", typeof(bool), typeof(SocialMediaButtons),
             new PropertyMetadata(true));
 
         public bool ShowTwitterLink
@@ -99,7 +99,7 @@ namespace DarkCode.Controls
         #region InstagramLink
 
         public static readonly DependencyProperty InstagramLinkProperty = DependencyProperty.Register(
-            "InstagramLink", typeof(string), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "InstagramLink", typeof(string), typeof(SocialMediaButtons),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string InstagramLink
@@ -113,7 +113,7 @@ namespace DarkCode.Controls
         #region ShowInstagramLink
 
         public static readonly DependencyProperty ShowInstagramLinkProperty = DependencyProperty.Register(
-            "ShowInstagramLink", typeof(bool), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "ShowInstagramLink", typeof(bool), typeof(SocialMediaButtons),
             new PropertyMetadata(true));
 
         public bool ShowInstagramLink
@@ -131,7 +131,7 @@ namespace DarkCode.Controls
         #region YoutubeLink
 
         public static readonly DependencyProperty YoutubeLinkProperty = DependencyProperty.Register(
-            "YoutubeLink", typeof(string), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "YoutubeLink", typeof(string), typeof(SocialMediaButtons),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string YoutubeLink
@@ -145,7 +145,7 @@ namespace DarkCode.Controls
         #region ShowYoutubeLink
 
         public static readonly DependencyProperty ShowYoutubeLinkProperty = DependencyProperty.Register(
-            "ShowYoutubeLink", typeof(bool), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "ShowYoutubeLink", typeof(bool), typeof(SocialMediaButtons),
             new PropertyMetadata(true));
 
         public bool ShowYoutubeLink
@@ -163,7 +163,7 @@ namespace DarkCode.Controls
         #region LinkedInLink
 
         public static readonly DependencyProperty LinkedInLinkProperty = DependencyProperty.Register(
-            "LinkedInLink", typeof(string), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "LinkedInLink", typeof(string), typeof(SocialMediaButtons),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string LinkedInLink
@@ -177,7 +177,7 @@ namespace DarkCode.Controls
         #region ShowLinkedInLink
 
         public static readonly DependencyProperty ShowLinkedInLinkProperty = DependencyProperty.Register(
-            "ShowLinkedInLink", typeof(bool), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "ShowLinkedInLink", typeof(bool), typeof(SocialMediaButtons),
             new PropertyMetadata(true));
 
         public bool ShowLinkedInLink
@@ -195,7 +195,7 @@ namespace DarkCode.Controls
         #region BeHanceLink
 
         public static readonly DependencyProperty BeHanceLinkProperty = DependencyProperty.Register(
-            "BeHanceLink", typeof(string), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "BeHanceLink", typeof(string), typeof(SocialMediaButtons),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string BeHanceLink
@@ -209,7 +209,7 @@ namespace DarkCode.Controls
         #region ShowBeHanceLink
 
         public static readonly DependencyProperty ShowBeHanceLinkProperty = DependencyProperty.Register(
-            "ShowBeHanceLink", typeof(bool), typeof(AmazingHoverEffectOnSocialMediaButtons),
+            "ShowBeHanceLink", typeof(bool), typeof(SocialMediaButtons),
             new PropertyMetadata(true));
 
         public bool ShowBeHanceLink

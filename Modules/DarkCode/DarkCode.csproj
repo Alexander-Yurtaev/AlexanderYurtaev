@@ -66,15 +66,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ViewModels\AmazingHoverEffectOnSocialMediaButtonsViewModel.cs" />
+    <Compile Include="ViewModels\SocialMediaButtonsViewModel.cs" />
     <Compile Include="ViewModels\AnimatedLoginFormViewModel.cs" />
     <Compile Include="ViewModels\FloatingGhostViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Controls\AmazingHoverEffectOnSocialMediaButtons.xaml.cs">
-      <DependentUpon>AmazingHoverEffectOnSocialMediaButtons.xaml</DependentUpon>
+    <Compile Include="Controls\SocialMediaButtons.xaml.cs">
+      <DependentUpon>SocialMediaButtons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AmazingHoverEffectOnSocialMediaButtonsView.xaml.cs">
-      <DependentUpon>AmazingHoverEffectOnSocialMediaButtonsView.xaml</DependentUpon>
+    <Compile Include="Views\SocialMediaButtonsView.xaml.cs">
+      <DependentUpon>SocialMediaButtonsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AnimatedLoginForm.xaml.cs">
       <DependentUpon>AnimatedLoginForm.xaml</DependentUpon>
@@ -107,11 +107,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\AmazingHoverEffectOnSocialMediaButtons.xaml">
+    <Page Include="Controls\SocialMediaButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AmazingHoverEffectOnSocialMediaButtonsView.xaml">
+    <Page Include="Views\SocialMediaButtonsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

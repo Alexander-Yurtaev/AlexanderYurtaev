@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="DarkCode.Views.AmazingHoverEffectOnSocialMediaButtonsView"
+    x:Class="DarkCode.Views.SocialMediaButtonsView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:AlexanderYurtaev.Controls;assembly=AlexanderYurtaev.Controls"
@@ -20,7 +20,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <controls1:AmazingHoverEffectOnSocialMediaButtons
+            <controls1:SocialMediaButtons
                 Grid.Row="1"
                 BeHanceLink="https://behance.net/test"
                 FacebookLink="https://facebook.com/test"
