@@ -89,6 +89,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Controls\SocialMediaButtons\ReadMe.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,6 +153,7 @@
     <Resource Include="Images\AnimatedLoginForm.png" />
     <Resource Include="Images\FloatingGhost.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(ProjectDir)..\..\AlexanderYurtaev.Demo\bin\Debug\Modules" mkdir "$(ProjectDir)..\..\AlexanderYurtaev.Demo\bin\Debug\Modules"
