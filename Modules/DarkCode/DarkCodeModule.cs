@@ -8,7 +8,6 @@ using DarkCode.Views;
 using Prism.Ioc;
 using Prism.Regions;
 using System;
-using DarkCode.Controls;
 
 namespace DarkCode
 {
@@ -35,7 +34,7 @@ namespace DarkCode
             containerRegistry.RegisterSingleton(typeof(AnimatedLoginForm));
             containerRegistry.RegisterSingleton(typeof(FloatingGhostView));
             containerRegistry.RegisterSingleton(typeof(SocialMediaButtonsView));
-            
+
             PreRegisterModule(containerRegistry);
             InitChildModuleItems();
         }

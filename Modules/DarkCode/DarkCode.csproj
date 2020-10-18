@@ -52,29 +52,29 @@
     <Compile Include="Controls\FloatingGhost.xaml.cs">
       <DependentUpon>FloatingGhost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20170904\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20170904\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20170930\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20170930\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20180531\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20180531\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20181018\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20181018\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20190422\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20190422\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20191011\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20191011\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20200329\SocialMediaButton.xaml.cs">
+    <Compile Include="Controls\SocialMediaButtons\v20200329\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SocialMediaButtons\20200724\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="Controls\SocialMediaButtons\v20200724\SocialMediaButton.xaml.cs">
+      <DependentUpon>SocialMediaButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="DarkCodeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,8 +94,8 @@
     <Compile Include="ViewModels\AnimatedLoginFormViewModel.cs" />
     <Compile Include="ViewModels\FloatingGhostViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Controls\SocialMediaButtons.xaml.cs">
-      <DependentUpon>SocialMediaButtons.xaml</DependentUpon>
+    <Compile Include="Controls\SocialMediaButtonsGroup.xaml.cs">
+      <DependentUpon>SocialMediaButtonsGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SocialMediaButtonsView.xaml.cs">
       <DependentUpon>SocialMediaButtonsView.xaml</DependentUpon>
@@ -113,14 +113,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Controls\SocialMediaButtons\20170904\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20170930\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20180531\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20181018\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20190422\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20191011\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20200329\ReadMe.md" />
-    <None Include="Controls\SocialMediaButtons\20200724\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20170904\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20170930\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20180531\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20181018\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20190422\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20191011\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20200329\ReadMe.md" />
+    <None Include="Controls\SocialMediaButtons\v20200724\ReadMe.md" />
     <None Include="Controls\SocialMediaButtons\ReadMe.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,35 +136,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20170904\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20170904\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20170930\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20170930\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20180531\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20180531\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20181018\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20181018\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20190422\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20190422\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20191011\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20191011\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20200329\SocialMediaButton.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20200329\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\20200724\UserControl1.xaml">
+    <Page Include="Controls\SocialMediaButtons\v20200724\SocialMediaButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,7 +172,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons.xaml">
+    <Page Include="Controls\SocialMediaButtonsGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,7 +211,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AmazingHoverEffectOnSocialMediaButtons.png" />
+    <Resource Include="Images\SocialMediaButtons.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AnimatedLoginForm.png" />

@@ -10,8 +10,8 @@ namespace DarkCode.ViewModels
     {
         #region Overrides of BaseModuleViewModel
 
-        public override string Title => "AmazingHover Effect On Social Media Buttons";
-        protected override string IconName => "AmazingHoverEffectOnSocialMediaButtons";
+        public override string Title => "Social Media Buttons";
+        protected override string IconName => "SocialMediaButtons";
 
         #endregion Overrides of BaseModuleViewModel
     }
