@@ -5,11 +5,11 @@
 namespace DarkCode.Controls.SocialMediaButtons.v20180531
 {
     /// <summary>
-    /// Interaction logic for SocialMediaButton.xaml
+    /// Interaction logic for SocialMediaButtonsGroup.xaml
     /// </summary>
-    public partial class SocialMediaButton : SocialMediaButtonBase
+    public partial class SocialMediaButtonsGroup : SocialMediaButtonsGroupBase
     {
-        public SocialMediaButton()
+        public SocialMediaButtonsGroup()
         {
             InitializeComponent();
         }

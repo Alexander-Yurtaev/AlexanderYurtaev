@@ -1,0 +1,60 @@
+﻿<socialMediaButtons:SocialMediaButtonsGroupBase
+    x:Class="DarkCode.Controls.SocialMediaButtons.v20181018.SocialMediaButtonsGroup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DarkCode.Controls.SocialMediaButtons.v20181018"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:socialMediaButtons="clr-namespace:DarkCode.Controls.SocialMediaButtons"
+    xmlns:visibleable="clr-namespace:AlexanderYurtaev.Controls.Visibleable;assembly=AlexanderYurtaev.Controls"
+    Width="812"
+    Height="100"
+    Margin="0"
+    d:DesignHeight="100"
+    d:DesignWidth="812"
+    Background="#2c3a47"
+    mc:Ignorable="d">
+
+    <socialMediaButtons:SocialMediaButtonsGroupBase.Resources>
+        <SolidColorBrush x:Key="DefaultForeground" Color="#6ab04c" />
+
+        <Style TargetType="local:SocialMediaButton">
+            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
+        </Style>
+    </socialMediaButtons:SocialMediaButtonsGroupBase.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <visibleable:VisibleableColumnDefinition Width="Auto" Visible="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=ShowFacebookLink}" />
+            <visibleable:VisibleableColumnDefinition Width="Auto" Visible="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=ShowTwitterLink}" />
+            <visibleable:VisibleableColumnDefinition Width="Auto" Visible="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=ShowInstagramLink}" />
+            <visibleable:VisibleableColumnDefinition Width="Auto" Visible="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=ShowYoutubeLink}" />
+            <visibleable:VisibleableColumnDefinition Width="Auto" Visible="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=ShowLinkedInLink}" />
+            <visibleable:VisibleableColumnDefinition Width="Auto" Visible="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButtonsGroup}, Path=ShowBeHanceLink}" />
+        </Grid.ColumnDefinitions>
+        <local:SocialMediaButton
+            Grid.Column="0"
+            NavigateUri="https://facebook.com/test"
+            SocialMediaButtonType="Facebook" />
+        <local:SocialMediaButton
+            Grid.Column="1"
+            NavigateUri="https://twitter.com/test"
+            SocialMediaButtonType="Twitter" />
+        <local:SocialMediaButton
+            Grid.Column="2"
+            NavigateUri="https://instagram.com/test"
+            SocialMediaButtonType="Instagram" />
+        <local:SocialMediaButton
+            Grid.Column="3"
+            NavigateUri="https://youtube.com/test"
+            SocialMediaButtonType="Youtube" />
+        <local:SocialMediaButton
+            Grid.Column="4"
+            NavigateUri="https://linkedin.com/test"
+            SocialMediaButtonType="LinkedIn" />
+        <local:SocialMediaButton
+            Grid.Column="5"
+            NavigateUri="https://behance.net/test"
+            SocialMediaButtonType="BeHance" />
+    </Grid>
+</socialMediaButtons:SocialMediaButtonsGroupBase>

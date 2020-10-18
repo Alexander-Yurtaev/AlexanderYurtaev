@@ -2,14 +2,14 @@
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-namespace DarkCode.Controls.SocialMediaButtons.v20180531
+namespace DarkCode.Controls.SocialMediaButtons.v20200329
 {
     /// <summary>
-    /// Interaction logic for SocialMediaButton.xaml
+    /// Interaction logic for SocialMediaButtonsGroup.xaml
     /// </summary>
-    public partial class SocialMediaButton : SocialMediaButtonBase
+    public partial class SocialMediaButtonsGroup : SocialMediaButtonsGroupBase
     {
-        public SocialMediaButton()
+        public SocialMediaButtonsGroup()
         {
             InitializeComponent();
         }
