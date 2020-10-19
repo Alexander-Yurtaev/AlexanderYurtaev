@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 
@@ -45,6 +46,12 @@ namespace DarkCode.Controls.SocialMediaButtons
         static SocialMediaButtonBase()
         {
             //DefaultStyleKeyProperty.OverrideMetadata(typeof(SocialMediaButtonBase), new FrameworkPropertyMetadata(typeof(SocialMediaButtonBase)));
+        }
+
+        public SocialMediaButtonBase()
+        {
+            Cursor = Cursors.Hand;
+            ForceCursor = true;
         }
 
         public static readonly DependencyProperty SocialMediaButtonTypeProperty = DependencyProperty.Register(

@@ -6,8 +6,10 @@
 
     <SolidColorBrush x:Key="DefaultForeground" Color="#6ab04c" />
 
+    <Style TargetType="socialMediaButtons:SocialMediaButtonsGroup" />
+
     <Style TargetType="socialMediaButtons:SocialMediaButtonBase">
-        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=socialMediaButtons:SocialMediaButtonsGroupBase}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
+        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=socialMediaButtons:SocialMediaButtonsGroup}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="socialMediaButtons:SocialMediaButtonBase">

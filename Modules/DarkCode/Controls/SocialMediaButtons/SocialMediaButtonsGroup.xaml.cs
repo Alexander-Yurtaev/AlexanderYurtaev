@@ -5,15 +5,16 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace DarkCode.Controls.SocialMediaButtons
 {
     /// <summary>
-    /// Interaction logic for SocialMediaButtonsGroupBase.xaml
+    /// Interaction logic for SocialMediaButtonsGroup.xaml
     /// </summary>
-    public partial class SocialMediaButtonsGroupBase : UserControl
+    public partial class SocialMediaButtonsGroup : UserControl
     {
-        public SocialMediaButtonsGroupBase()
+        public SocialMediaButtonsGroup()
         {
             InitializeComponent();
         }
@@ -28,12 +29,21 @@ namespace DarkCode.Controls.SocialMediaButtons
             return uri.IsAbsoluteUri;
         }
 
+        public static readonly DependencyProperty ButtonBackgroundProperty = DependencyProperty.Register(
+            "ButtonBackground", typeof(Brush), typeof(SocialMediaButtonsGroup));
+
+        public Brush ButtonBackground
+        {
+            get => (Brush) GetValue(ButtonBackgroundProperty);
+            set => SetValue(ButtonBackgroundProperty, value);
+        }
+
         #region Facebook
 
         #region FacebookLink
 
         public static readonly DependencyProperty FacebookLinkProperty = DependencyProperty.Register(
-            "FacebookLink", typeof(string), typeof(SocialMediaButtonsGroupBase),
+            "FacebookLink", typeof(string), typeof(SocialMediaButtonsGroup),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string FacebookLink
@@ -47,7 +57,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region ShowFacebookLink
 
         public static readonly DependencyProperty ShowFacebookLinkProperty = DependencyProperty.Register(
-            "ShowFacebookLink", typeof(bool), typeof(SocialMediaButtonsGroupBase),
+            "ShowFacebookLink", typeof(bool), typeof(SocialMediaButtonsGroup),
             new PropertyMetadata(true));
 
         public bool ShowFacebookLink
@@ -65,7 +75,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region TwitterLink
 
         public static readonly DependencyProperty TwitterLinkProperty = DependencyProperty.Register(
-            "TwitterLink", typeof(string), typeof(SocialMediaButtonsGroupBase),
+            "TwitterLink", typeof(string), typeof(SocialMediaButtonsGroup),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string TwitterLink
@@ -79,7 +89,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region ShowTwitterLink
 
         public static readonly DependencyProperty ShowTwitterLinkProperty = DependencyProperty.Register(
-            "ShowTwitterLink", typeof(bool), typeof(SocialMediaButtonsGroupBase),
+            "ShowTwitterLink", typeof(bool), typeof(SocialMediaButtonsGroup),
             new PropertyMetadata(true));
 
         public bool ShowTwitterLink
@@ -97,7 +107,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region InstagramLink
 
         public static readonly DependencyProperty InstagramLinkProperty = DependencyProperty.Register(
-            "InstagramLink", typeof(string), typeof(SocialMediaButtonsGroupBase),
+            "InstagramLink", typeof(string), typeof(SocialMediaButtonsGroup),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string InstagramLink
@@ -111,7 +121,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region ShowInstagramLink
 
         public static readonly DependencyProperty ShowInstagramLinkProperty = DependencyProperty.Register(
-            "ShowInstagramLink", typeof(bool), typeof(SocialMediaButtonsGroupBase),
+            "ShowInstagramLink", typeof(bool), typeof(SocialMediaButtonsGroup),
             new PropertyMetadata(true));
 
         public bool ShowInstagramLink
@@ -129,7 +139,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region YoutubeLink
 
         public static readonly DependencyProperty YoutubeLinkProperty = DependencyProperty.Register(
-            "YoutubeLink", typeof(string), typeof(SocialMediaButtonsGroupBase),
+            "YoutubeLink", typeof(string), typeof(SocialMediaButtonsGroup),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string YoutubeLink
@@ -143,7 +153,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region ShowYoutubeLink
 
         public static readonly DependencyProperty ShowYoutubeLinkProperty = DependencyProperty.Register(
-            "ShowYoutubeLink", typeof(bool), typeof(SocialMediaButtonsGroupBase),
+            "ShowYoutubeLink", typeof(bool), typeof(SocialMediaButtonsGroup),
             new PropertyMetadata(true));
 
         public bool ShowYoutubeLink
@@ -161,7 +171,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region LinkedInLink
 
         public static readonly DependencyProperty LinkedInLinkProperty = DependencyProperty.Register(
-            "LinkedInLink", typeof(string), typeof(SocialMediaButtonsGroupBase),
+            "LinkedInLink", typeof(string), typeof(SocialMediaButtonsGroup),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string LinkedInLink
@@ -175,7 +185,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region ShowLinkedInLink
 
         public static readonly DependencyProperty ShowLinkedInLinkProperty = DependencyProperty.Register(
-            "ShowLinkedInLink", typeof(bool), typeof(SocialMediaButtonsGroupBase),
+            "ShowLinkedInLink", typeof(bool), typeof(SocialMediaButtonsGroup),
             new PropertyMetadata(true));
 
         public bool ShowLinkedInLink
@@ -193,7 +203,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region BeHanceLink
 
         public static readonly DependencyProperty BeHanceLinkProperty = DependencyProperty.Register(
-            "BeHanceLink", typeof(string), typeof(SocialMediaButtonsGroupBase),
+            "BeHanceLink", typeof(string), typeof(SocialMediaButtonsGroup),
             new FrameworkPropertyMetadata(default(string)), ValidateValueCallback);
 
         public string BeHanceLink
@@ -207,7 +217,7 @@ namespace DarkCode.Controls.SocialMediaButtons
         #region ShowBeHanceLink
 
         public static readonly DependencyProperty ShowBeHanceLinkProperty = DependencyProperty.Register(
-            "ShowBeHanceLink", typeof(bool), typeof(SocialMediaButtonsGroupBase),
+            "ShowBeHanceLink", typeof(bool), typeof(SocialMediaButtonsGroup),
             new PropertyMetadata(true));
 
         public bool ShowBeHanceLink

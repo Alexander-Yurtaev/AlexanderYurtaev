@@ -55,8 +55,8 @@
       <DependentUpon>FloatingGhost.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SocialMediaButtons\SocialMediaButtonBase.cs" />
-    <Compile Include="Controls\SocialMediaButtons\SocialMediaButtonsGroupBase.xaml.cs">
-      <DependentUpon>SocialMediaButtonsGroupBase.xaml</DependentUpon>
+    <Compile Include="Controls\SocialMediaButtons\SocialMediaButtonsGroup.xaml.cs">
+      <DependentUpon>SocialMediaButtonsGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SocialMediaButtons\v20170904\SocialMediaButton.xaml.cs">
       <DependentUpon>SocialMediaButton.xaml</DependentUpon>
@@ -140,7 +140,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SocialMediaButtons\SocialMediaButtonsGroupBase.xaml">
+    <Page Include="Controls\SocialMediaButtons\SocialMediaButtonsGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

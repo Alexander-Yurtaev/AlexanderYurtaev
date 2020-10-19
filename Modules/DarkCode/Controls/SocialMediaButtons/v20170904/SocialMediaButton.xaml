@@ -6,8 +6,84 @@
     xmlns:local="clr-namespace:DarkCode.Controls.SocialMediaButtons.v20170904"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:socialMediaButtons="clr-namespace:DarkCode.Controls.SocialMediaButtons"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    Width="60"
+    Height="60"
+    d:DesignHeight="60"
+    d:DesignWidth="60"
     mc:Ignorable="d">
-    <Grid />
+
+    <socialMediaButtons:SocialMediaButtonBase.Resources>
+        <SolidColorBrush x:Key="DefaultForeground" Color="#f1f1f1" />
+        <SolidColorBrush x:Key="DefaultBackground" Color="#314652" />
+
+        <Style TargetType="{x:Type Ellipse}">
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Height" Value="60" />
+            <Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButton}, Path=Background, FallbackValue={StaticResource DefaultBackground}, TargetNullValue={StaticResource DefaultBackground}}" />
+        </Style>
+
+        <Style TargetType="{x:Type Hyperlink}">
+            <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform CenterX="50" CenterY="50" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Path">
+            <Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButton}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
+            <Setter Property="Stretch" Value="Uniform" />
+            <Setter Property="Height" Value="28" />
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+        </Style>
+        <Storyboard x:Key="MouseEnterStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.2" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.2" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MouseLeaveStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </socialMediaButtons:SocialMediaButtonBase.Resources>
+    <socialMediaButtons:SocialMediaButtonBase.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource MouseEnterStoryboard}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+            <BeginStoryboard x:Name="MouseLeaveStoryboard_BeginStoryboard" Storyboard="{StaticResource MouseLeaveStoryboard}" />
+        </EventTrigger>
+    </socialMediaButtons:SocialMediaButtonBase.Triggers>
+
+    <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform />
+                <RotateTransform />
+                <TranslateTransform />
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <Ellipse />
+        <TextBlock>
+            <Hyperlink NavigateUri="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButton}, Path=NavigateUri}" RequestNavigate="Hyperlink_OnRequestNavigate">
+                <TextBlock>
+                    <Path Data="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SocialMediaButton}, Path=Data}" />
+                </TextBlock>
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
 </socialMediaButtons:SocialMediaButtonBase>

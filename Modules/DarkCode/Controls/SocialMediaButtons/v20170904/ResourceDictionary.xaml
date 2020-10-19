@@ -4,10 +4,20 @@
     xmlns:local="clr-namespace:DarkCode.Controls.SocialMediaButtons.v20170904"
     xmlns:socialMediaButtons="clr-namespace:DarkCode.Controls.SocialMediaButtons">
 
-    <SolidColorBrush x:Key="DefaultForeground" Color="#6ab04c" />
+    <SolidColorBrush x:Key="DefaultForeground" Color="#f1f1f1" />
+    <SolidColorBrush x:Key="DefaultBackground" Color="#314652" />
+
+    <Style TargetType="socialMediaButtons:SocialMediaButtonsGroup">
+        <Setter Property="Width" Value="700" />
+        <Setter Property="Height" Value="80" />
+        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
+    </Style>
 
     <Style TargetType="socialMediaButtons:SocialMediaButtonBase">
-        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=socialMediaButtons:SocialMediaButtonsGroupBase}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=socialMediaButtons:SocialMediaButtonsGroup}, Path=Foreground, FallbackValue={StaticResource DefaultForeground}, TargetNullValue={StaticResource DefaultForeground}}" />
+        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=socialMediaButtons:SocialMediaButtonsGroup}, Path=Background, FallbackValue={StaticResource DefaultBackground}, TargetNullValue={StaticResource DefaultBackground}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="socialMediaButtons:SocialMediaButtonBase">
